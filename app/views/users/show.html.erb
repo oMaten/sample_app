@@ -1,0 +1,9 @@
+<% provide(:title , @user.name) %>
+<div class="mdl-grid grid-user-style">
+  <div class="mdl-cell mdl-cell--4-col">
+  	<h1>
+			<%= gravatar_for @user %>
+			<%= @user.name %>
+		</h1>
+  </div>
+</div>

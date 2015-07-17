@@ -11,6 +11,11 @@
   	<div class="mdl-layout mdl-js-layout container-style">
   		<%= render 'layouts/header' %>
 	    <main class="mdl-layout__content main-style">
+	    	<% flash.each do |key, value| %>
+	    		<div class="alert alert-<%= key %>">
+						<%= value %>
+	    		</div>
+	    	<% end %>
 	      <%= yield %>
 	    </main>
 	    <%= render 'layouts/footer' %>

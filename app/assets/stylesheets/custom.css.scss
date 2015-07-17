@@ -2,6 +2,12 @@
 
 /* universal */
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 *{
 	padding: 0;
 	margin: 0;
@@ -58,9 +64,30 @@
 		.home-style{
 			text-align: center;
 		}
+		.signup-grid-style{
+			max-width: 300px;
+			#error_explanation {
+			  color: #f00;
+			  ul {
+			    list-style: none;
+			    margin: 0 0 18px 0;
+			  }
+			}
+			.submit-grid-style{
+				margin-top: 30px;
+				max-width: 161px;
+			}
+		}
 	}
 	/* footer */
 	.footer-style{
-
+	}
+	.debug_dump{
+	  clear: both;
+	  float: left;
+	  width: 100%;
+	  margin-top: 45px;
+	  background-color: #eaeaea;
+	  @include box_sizing;
 	}
 }
