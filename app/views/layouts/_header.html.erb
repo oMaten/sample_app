@@ -5,7 +5,14 @@
       <nav class="mdl-navigation">
       <span class="mdl-navigation__link"><%= link_to "Home", root_path %></span>
       <span class="mdl-navigation__link"><%= link_to "Help", help_path %></span>
-      <span class="mdl-navigation__link"><%= link_to "Sign in", '#' %></span>
+      <% if signed_in? %>
+				<span class="mdl-navigation__link"><%= link_to "User", '#' %></span>
+				<span class="mdl-navigation__link"><%= link_to "Profile", current_user %></span>
+				<span class="mdl-navigation__link"><%= link_to "Settings", '#' %></span>
+				<span class="mdl-navigation__link"><%= link_to "Sign out", signout_path, method: "delete" %></span>
+      <% else %>
+      	<span class="mdl-navigation__link"><%= link_to "Sign in", signin_path %></span>
+      <% end %>
     </nav>
   </div>
 </header>
