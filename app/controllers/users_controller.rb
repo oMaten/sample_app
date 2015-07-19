@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create
     flash[:success] = "Welcome to Sample App"
   	@user = User.new(params[:user])
+    redirect_to @user
   	if @user.save
       redirect_to @user
     else

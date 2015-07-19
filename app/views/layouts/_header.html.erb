@@ -6,7 +6,7 @@
       <span class="mdl-navigation__link"><%= link_to "Home", root_path %></span>
       <span class="mdl-navigation__link"><%= link_to "Help", help_path %></span>
       <% if signed_in? %>
-				<span class="mdl-navigation__link"><%= link_to "User", '#' %></span>
+				<span class="mdl-navigation__link"><%= link_to "User #{@user.name}", '#' %></span>
 				<span class="mdl-navigation__link"><%= link_to "Profile", current_user %></span>
 				<span class="mdl-navigation__link"><%= link_to "Settings", '#' %></span>
 				<span class="mdl-navigation__link"><%= link_to "Sign out", signout_path, method: "delete" %></span>
