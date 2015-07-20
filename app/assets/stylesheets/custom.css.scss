@@ -1,4 +1,5 @@
 @import 'material';
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 /* universal */
 
@@ -40,6 +41,15 @@
 	/* header */
 	.header-style{
 		background-color: #ff4081;
+		.header-icon-style{
+			margin-right: 50px;
+		}
+		.header-menu-style{
+			a{
+				display: block;
+				color: #ff4081;
+			}
+		}
 		.logo-style{
 		  float: left;
 		  margin-right: 10px;
@@ -51,10 +61,6 @@
 		  font-weight: bold;
 		  line-height: 1;
 		}
-		.logo-style:hover{
-		  color: #fff;
-		  text-decoration: none;
-		}
 		a{
 			color: #fff;
 		}
@@ -63,9 +69,35 @@
 	.main-style{
 		.home-style{
 			text-align: center;
+			min-height: 800px;
+		}
+		.edit-grid-style{
+			max-width: 580px;
+			min-height: 800px;
+			.face-grid-style{
+				float: left;
+			}
+			form{
+				float: left;
+				margin-left: 120px;
+				max-width: 320px;
+			}
+		}
+		.users-list-style{
+			min-height: 900px;
+			width: 640px;
+			display: block;
+			margin: 0 auto;
+			.card-square-style{
+				width: 120px;
+				min-height: 150px;
+				float: left;
+				margin: 10px 20px 10px;
+			}
 		}
 		.signup-grid-style{
 			max-width: 300px;
+			min-height: 800px;
 			#error_explanation {
 			  color: #f00;
 			  ul {
@@ -79,18 +111,18 @@
 			}
 		}
 		.signin-grid-style{
+			min-height: 800px;
 			max-width: 300px;
+		}
+		.help-grid-style{
+			min-height: 800px;
+		}
+		.user-grid-style{
+			min-height: 800px;
 		}
 	}
 	/* footer */
 	.footer-style{
-	}
-	.debug_dump{
-	  clear: both;
-	  float: left;
-	  width: 100%;
-	  margin-top: 45px;
-	  background-color: #eaeaea;
-	  @include box_sizing;
+		min-height: 70px;
 	}
 }

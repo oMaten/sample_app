@@ -2,17 +2,22 @@
   <div class="mdl-layout__header-row">
     <div class="mdl-navigation__title"><%= link_to "sample app", root_path, class: "logo-style" %></div>
     <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation">
-      <span class="mdl-navigation__link"><%= link_to "Home", root_path %></span>
-      <span class="mdl-navigation__link"><%= link_to "Help", help_path %></span>
-      <% if signed_in? %>
-				<span class="mdl-navigation__link"><%= link_to "User #{@user.name}", '#' %></span>
-				<span class="mdl-navigation__link"><%= link_to "Profile", current_user %></span>
-				<span class="mdl-navigation__link"><%= link_to "Settings", '#' %></span>
-				<span class="mdl-navigation__link"><%= link_to "Sign out", signout_path, method: "delete" %></span>
-      <% else %>
-      	<span class="mdl-navigation__link"><%= link_to "Sign in", signin_path %></span>
-      <% end %>
+    <nav class="mdl-navigation">
+    <span class="mdl-navigation__link"><%= link_to "Home", root_path %></span>
+    <span class="mdl-navigation__link"><%= link_to "Help", help_path %></span>
+    <% if signed_in? %>
+      <button id="user-menu-icon" class="mdl-button mdl-js-button mdl-button--icon header-icon-style">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect header-menu-style" for="user-menu-icon">
+        <li class="mdl-menu__item"><%= link_to "Users", users_path %></li>
+        <li class="mdl-menu__item"><%= link_to "User", '#' %></li>
+        <li class="mdl-menu__item"><%= link_to "Profile", edit_user_path(current_user) %></li>
+        <li class="mdl-menu__item"><%= link_to "Sign out", signout_path, method: "delete" %></li>
+      </ul>
+    <% else %>
+    	<span class="mdl-navigation__link"><%= link_to "Sign in", signin_path %></span>
+    <% end %>
     </nav>
   </div>
 </header>
