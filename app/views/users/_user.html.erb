@@ -2,5 +2,8 @@
 	<%= gravatar_for user %>
   <div class="mdl-card__actions mdl-card--border">
     <%= link_to user.name, user, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+    <% if current_user.admin? && !current_user?(user) %>
+    	<%= link_to "delete", user, method: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>
   </div>
 </li>
