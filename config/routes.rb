@@ -1,6 +1,7 @@
 SampleApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
   root to: 'static_pages#home'
   get '/help',    to: 'static_pages#help'
   get '/about',   to: 'static_pages#about'
@@ -9,6 +10,8 @@ SampleApp::Application.routes.draw do
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
+
+  post '/microposts', to: 'microposts#create'
 
 
   # The priority is based upon order of creation:

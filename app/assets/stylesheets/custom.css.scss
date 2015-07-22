@@ -119,6 +119,27 @@
 		}
 		.user-grid-style{
 			min-height: 800px;
+			.user-grid-one {
+				.user-input{
+					margin: 0 auto;
+					height: 345px;
+					width: 300px
+				}
+				.microposts {
+				  list-style: none;
+				  margin: 10px 0 0 0;
+				  li {
+				    padding: 10px 0;
+				    border-top: 1px solid #e8e8e8;
+				  }
+				}
+				.content {
+				  display: block;
+				}
+				.timestamp {
+				  color: #ff4081;
+				}
+			}
 		}
 	}
 	/* footer */
