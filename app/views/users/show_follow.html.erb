@@ -1,0 +1,24 @@
+<% provide(:title, @title) %>
+<div class="follow-list-style">
+  <div class="mdl-grid user-grid-one">
+    <div class="mdl-cell mdl-cell--6-col">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+      <%= render 'shared/stats' %>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col">
+      <div>
+        <h3><%= @title %></h3>
+        <% if @users.any? %>
+          <ul class="users-list-style">
+            <%= render @users %>
+          </ul>
+          <%= paginate @users%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

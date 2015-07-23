@@ -6,6 +6,10 @@
 				<%= gravatar_for @user %>
 				<%= @user.name %>
 			</h1>
+			<% if signed_in? %>
+				<%= render 'follow_form' %>
+			<% end %>
+			<%= render 'shared/stats' %>
 			<% if current_user?(@user) %>
 				<div class="user-input">
 		      <section>
