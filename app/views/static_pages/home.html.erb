@@ -1,13 +1,19 @@
 <div class="center hero-unit home-style">
-  <h1>Welcome to the Sample App</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", new_user_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+	<% if signed_in? %>
+		<% if @user.microposts.any? %>
+			<ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= paginate @paginatable_array %>
+		<% end %>
+	<% else %>
+		<h1>Welcome to the Sample App</h1>
+	  <h2>
+	    This is the home page for the
+	    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+	    sample application.
+	  </h2>
+	  <%= link_to "Sign up now!", new_user_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+	  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+	<% end %>
 </div>
-
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
