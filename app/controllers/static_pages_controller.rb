@@ -7,7 +7,10 @@ class StaticPagesController < ApplicationController
 			@followed_users.each do |user|
 				@microposts.concat(user.microposts)
 			end
-			@paginatable_array = Kaminari.paginate_array(@microposts).page(params[:page]).per(15)
+      @microposts.sort! do |a,b|
+        b.created_at <=> a.created_at
+      end
+      @paginatable_array = Kaminari.paginate_array(@microposts).page(params[:page]).per(50)
 		end
 	end
 
