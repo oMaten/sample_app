@@ -3,8 +3,8 @@
 		<% if @user.microposts.any? %>
 			<ol class="microposts">
         <%= render @paginatable_array %>
+        <%= paginate @paginatable_array %>
       </ol>
-      <%= paginate @paginatable_array %>
 		<% end %>
 	<% else %>
 		<h1>Welcome to the Sample App</h1>
