@@ -88,6 +88,8 @@
 			.face {
 				position: absolute;
 				left: 0;
+				border-radius: 50%;
+				overflow: hidden;
 			}
 			.content {
 			  display: block;
